@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cropper example</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.css" />-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/cropper.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>How to Crop &amp; Upload Images</h1>
+
+        <h2>1. Select File</h2>
+        <div>
+            <input type="file" name="img_file" id="img_file">
+            <button id="crop">Crop</button>
+        </div>
+
+        <h2>2. Crop</h2>
+        <div>
+            <canvas id="canvas">
+                Your browser does not support HTML5 Canvas
+            </canvas>
+        </div>
+
+        <h2>3. Result</h2>
+        <div id="result">
+
+        </div>
+
+        <h2>4. Upload Cropper Image</h2>
+
+        <button class="btn btn-info" id="dragModeMove" style="margin:10px;"><i class="fa fa-arrows" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="dragModeCrop" style="margin:10px;"><i class="fa fa-crop" aria-hidden="true"></i></button>
+
+        <button class="btn btn-info" id="rotateLeft" style="margin:10px;"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="rotateRight" style="margin:10px;"><i class="fa fa-undo" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="moveLeft" style="margin:10px;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="moveRight" style="margin:10px;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="moveUp" style="margin:10px;"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="moveDown" style="margin:10px;"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="zoomPlus" style="margin:10px;"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+        <button class="btn btn-info" id="zoomMinus" style="margin:10px;"><i class="fa fa-search-minus" aria-hidden="true"></i></button>
+
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/cropper.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.js"></script>-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
