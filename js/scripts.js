@@ -87,34 +87,41 @@ $(function(){
                         var cropper = $canvas.cropper('destroy').cropper({
                             aspectRatio: 3 / 4,
                             viewMode: 1,
-                            preview: '.img-preview'
+                            dragMode: 'move',
+                            preview: '.img-preview',
+                            autoCropArea: 0.00000001,
+                            //aspectRatio: 2,
                             //,
-                            //crop: function (e) {
-                            //    var data = e.detail;
+                            crop: function (e) {
+                                var data = e.detail;
 
-                            //    //var croppedImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
-                            //    //$('#result').html($('<img style="width: 200px;">').attr('src', croppedImage));
+                                //var croppedImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+                                //$('#result').html($('<img style="width: 200px;">').attr('src', croppedImage));
 
-                            //    //console.log($canvas.cropper('getCroppedCanvas').toDataURL('image/jpg'));
-                            //    //console.log(e.type);
-                            //    //dataX.value = Math.round(data.x);
-                            //    //dataY.value = Math.round(data.y);
-                            //    //dataHeight.value = Math.round(data.height);
-                            //    //dataWidth.value = Math.round(data.width);
-                            //    //dataRotate.value = typeof data.rotate !== 'undefined' ? data.rotate : '';
-                            //    //dataScaleX.value = typeof data.scaleX !== 'undefined' ? data.scaleX : '';
-                            //    //dataScaleY.value = typeof data.scaleY !== 'undefined' ? data.scaleY : '';
-                            //}
+                                //console.log($canvas.cropper('getCroppedCanvas').toDataURL('image/jpg'));
+                                //console.log(e.type);
+                                //dataX.value = Math.round(data.x);
+                                //dataY.value = Math.round(data.y);
+                                var h = Math.round(data.height);
+                                var w = Math.round(data.width);
+                                if (w < 300) {
+                                    this.cropper.setData({ width: 300 });
+                                }
+                                //dataRotate.value = typeof data.rotate !== 'undefined' ? data.rotate : '';
+                                //dataScaleX.value = typeof data.scaleX !== 'undefined' ? data.scaleX : '';
+                                //dataScaleY.value = typeof data.scaleY !== 'undefined' ? data.scaleY : '';
+                           // }
                             //ready: function () {
-                            //    // Do something here
-                            //    // ...
-                            //    console.log($canvas.cropper('getCroppedCanvas').toDataURL('image/jpg'));
-                            //    var dataCurrentImage = this.cropper.getData()
-                            //    //$('#imageCurrentCrop').html($('<img>').attr('src', dataCurrentImage));
-                            //    // And then
-                            //    //console.log(.event.detail.x);
-                            //    ;
-                            //}
+                            //    this.cropper.setData({ width: 236 });
+                                // Do something here
+                                // ...
+                                //console.log($canvas.cropper('getCroppedCanvas').toDataURL('image/jpg'));
+                                //var dataCurrentImage = 
+                                //$('#imageCurrentCrop').html($('<img>').attr('src', dataCurrentImage));
+                                // And then
+                                //console.log(.event.detail.x);
+                                //;
+                            }
                         });
                     }
                     //socket.on('updateCanvasImage', src => { update = false; image.src = src });
