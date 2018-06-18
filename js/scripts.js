@@ -3,54 +3,66 @@ $(function(){
         context = $canvas.get(0).getContext('2d');
 
     $("#dragModeMove").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('setDragMode', 'move');
     });
 
     $("#dragModeCrop").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('setDragMode','crop');
+    });
+    var x = 1;
+    $("#scaleX").on("click", function () {
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        
+        $('#canvas').cropper('scaleX', x*=-1);
+
+    });
+    var y = 1;
+    $("#scaleY").on("click", function () {
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        $('#canvas').cropper('scaleY', y*=-1);
     });
 
 
     $("#rotateLeft").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('rotate', 45);
     });
 
     $("#rotateRight").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('rotate', -45);
     });
 
     $("#moveLeft").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('move', -50, 0);
     });
 
     $("#moveRight").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('move', 50, 0);
     });
 
 
     $("#moveUp").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('move', 0, -50);
     });
 
     $("#moveDown").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('move', 0, 50);
     });
 
     $("#zoomPlus").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('zoom', 0.1);
     });
 
     $("#zoomMinus").on("click", function () {
-        var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+        //var cropperImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
         $('#canvas').cropper('zoom', -0.1);
     });
 
@@ -74,7 +86,35 @@ $(function(){
                         }
                         var cropper = $canvas.cropper('destroy').cropper({
                             aspectRatio: 3 / 4,
-                            viewMode: 1
+                            viewMode: 1,
+                            preview: '.img-preview'
+                            //,
+                            //crop: function (e) {
+                            //    var data = e.detail;
+
+                            //    //var croppedImage = $canvas.cropper('getCroppedCanvas').toDataURL('image/jpg');
+                            //    //$('#result').html($('<img style="width: 200px;">').attr('src', croppedImage));
+
+                            //    //console.log($canvas.cropper('getCroppedCanvas').toDataURL('image/jpg'));
+                            //    //console.log(e.type);
+                            //    //dataX.value = Math.round(data.x);
+                            //    //dataY.value = Math.round(data.y);
+                            //    //dataHeight.value = Math.round(data.height);
+                            //    //dataWidth.value = Math.round(data.width);
+                            //    //dataRotate.value = typeof data.rotate !== 'undefined' ? data.rotate : '';
+                            //    //dataScaleX.value = typeof data.scaleX !== 'undefined' ? data.scaleX : '';
+                            //    //dataScaleY.value = typeof data.scaleY !== 'undefined' ? data.scaleY : '';
+                            //}
+                            //ready: function () {
+                            //    // Do something here
+                            //    // ...
+                            //    console.log($canvas.cropper('getCroppedCanvas').toDataURL('image/jpg'));
+                            //    var dataCurrentImage = this.cropper.getData()
+                            //    //$('#imageCurrentCrop').html($('<img>').attr('src', dataCurrentImage));
+                            //    // And then
+                            //    //console.log(.event.detail.x);
+                            //    ;
+                            //}
                         });
                     }
                     //socket.on('updateCanvasImage', src => { update = false; image.src = src });
